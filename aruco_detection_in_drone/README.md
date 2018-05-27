@@ -19,3 +19,5 @@ In other terminal execute this code
 In other one `source Tools/setup_gazebo.bash $(pwd) $(pwd)/build/posix_sitl_default`
 
 `roslaunch gazebo_ros empty_world.launch world_name:=$(pwd)/Tools/sitl_gazebo/worlds/iris.world`
+
+`roslaunch mavros px4.launch fcu_url:="udp://:14540@192.168.1.36:14557"`
