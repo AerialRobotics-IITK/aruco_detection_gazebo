@@ -34,14 +34,15 @@ Add these lines
     save it .
     
   II) To Run the gazebo simulation follow these
-     1)Go to ~src/Firmware
-       run the command "no_sim=1 make posix_sitl_default gazebo"
-       as shown in https://dev.px4.io/en/simulation/ros_interface.html (What's Happening Behind the Scenes)
+     1)Go to ~src/Firmware    
+       `run the command "no_sim=1 make posix_sitl_default gazebo"`
+       as shown in [What's Happening Behind the Scenes](https://dev.px4.io/en/simulation/ros_interface.html) 
        it will initialize the gazebo
     2)To open our iris
        Go to Firmware again in new Terminal 
-       run the command bash command "source Tools/setup_gazebo.bash $(pwd) $(pwd)/build/posix_sitl_default"
-       Then run the command "roslaunch gazebo_ros empty_world.launch world_name:=$(pwd)/Tools/sitl_gazebo/worlds/iris.world" in the same terminal
+       run the command bash command `"source Tools/setup_gazebo.bash $(pwd) $(pwd)/build/posix_sitl_default"`
+       
+       Then run the command `"roslaunch gazebo_ros empty_world.launch world_name:=$(pwd)/Tools/sitl_gazebo/worlds/iris.world"` in the same terminal
   
   Now we can see our iris with camera in gazebo simulator
   
