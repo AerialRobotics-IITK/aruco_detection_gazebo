@@ -1,3 +1,5 @@
+# Installing gazebo
+
 Downlaod the ubuntu_sim_ros_gazebo.sh and then source it
 
 `source ubuntu_sim_ros_gazebo.sh`
