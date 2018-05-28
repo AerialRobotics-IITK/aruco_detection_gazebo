@@ -32,7 +32,7 @@ Now goto `cd ~/src`
 
 `cd Firmware`
 
-`make posix jmavsim`
+`make posix jmavsim` //not necessary to install its an other type of simulator
 
 `make posix_sitl_default gazebo`
 
@@ -43,28 +43,3 @@ Now goto `cd ~/src`
 
 
 
-goto your catkin workspace
-
-make a offboard catkin package
-
-`catkin_create_pkg offboard geometry_msgs mavros_msgs`
-
-Now in the src folder of the offboard package make a file named `offb_node.cpp` and then copy paste the code from [here](https://dev.px4.io/en/ros/mavros_offboard.html)
-
-in the CMakeLists.txt add these in the last
-
-`add_executable(offb_node src/offb_node.cpp)`
-
-`target_link_libraries(offb_node ${catkin_LIBRARIES})`
-
-
-
-
-
-`catkin_make`
-
-run `roscore`
-
-`source devel/setup.sh`
-
-`rosrun offboard offb_node`
