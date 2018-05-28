@@ -69,9 +69,8 @@ This tutorial assumes your have cloned Firmware folder in ~/src/Firmware and hav
     
  * To Run the gazebo simulation follow these
      1. Go to ~src/Firmware    
-     
        run the command `no_sim=1 make posix_sitl_default gazebo`
-       as shown in [What's Happening Behind the Scenes](https://dev.px4.io/en/simulation/ros_interface.html) it will initialize the gazebo
+       as shown in [What's Happening Behind the Scenes](https://dev.px4.io/en/simulation/ros_interface.html) it will                initialize the gazebo
        
     1. To open our iris
        Go to Firmware again in new Terminal 
@@ -87,7 +86,7 @@ This tutorial assumes your have cloned Firmware folder in ~/src/Firmware and hav
   
   You can also visualize it by typing `rosrun rqt_image_view rqt_image_view`
   
-  Then see the image of our camera in iris quad in /iris/camera_red_iris/image_raw`.
+  Then see the image of our camera in iris quad in `/iris/camera_red_iris/image_raw`.
 
 
 ## Aruco detection in gazebo
