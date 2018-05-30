@@ -1,6 +1,6 @@
 # Quaternions
 
-For understanding about quaternions please see the documentation in the quaternions.pdf in this folder.
+For understanding about quaternions please see the documentation in the quaternions.pdf and the quaternions.md in this folder.
 
 ## Sources
 
@@ -9,3 +9,7 @@ For understanding about quaternions please see the documentation in the quaterni
 [CFrame Library](http://wiki.roblox.com/index.php?title=CFrame)
 
 [Understanding Euler Angles](http://wiki.roblox.com/index.php?title=Euler_angles)
+
+[Source Link](http://www.weizmann.ac.il/sci-tea/benari/sites/sci tea.benari/files/uploads/softwareAndLearningMaterials/quaternion-tutorial-2-0.pdf)
+
+
