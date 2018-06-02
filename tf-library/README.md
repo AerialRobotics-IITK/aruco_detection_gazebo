@@ -1,3 +1,5 @@
+# using tf-library for quaternion rotation
+
 `launch mavros px4.launch fcu_url:=/dev/ttyACM0:115200` //baudrate
 
 `dmesg`
