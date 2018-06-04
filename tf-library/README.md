@@ -2,7 +2,7 @@
 
 first download the offboard node from here and paste it your src folder
 
-`launch mavros px4.launch fcu_url:=/dev/ttyACM0:115200` //baudrate is 11500 which tells the rate at which data is bing published
+`roslaunch mavros px4.launch fcu_url:=/dev/ttyACM0:115200` //baudrate is 115200 which tells the rate at which data is bing published
 
 `dmesg`
 
