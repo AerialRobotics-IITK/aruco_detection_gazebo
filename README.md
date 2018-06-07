@@ -145,3 +145,13 @@ and save it.
 `rosrun rqt_image_view rqt_image_view` and select stream .. /aruco.single/result
 
 Now you can get the pose data from the topic aruco.single/pose
+
+# Hovering over the aruco
+
+clone this offboard node to the src of catkin folder (this is modified one)
+
+Now catkin_make and source it
+
+follow the [aruco detection in gazebo](https://github.com/AerialRobotics-IITK/gazebo_simulation/blob/master/README.md#aruco-detection-in-gazebo) again .
+
+
