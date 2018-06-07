@@ -154,4 +154,6 @@ Now catkin_make and source it
 
 follow the [aruco detection in gazebo](https://github.com/AerialRobotics-IITK/gazebo_simulation/blob/master/README.md#aruco-detection-in-gazebo) again .
 
+now modify the iris.world and change the size of aruco in the models
+
 
