@@ -76,12 +76,14 @@ void posecallback(const geometry_msgs::PoseStamped::ConstPtr& msg)
   positionbe[2]=-(msg->pose.position.z);
   positionaf=R*positionbe;
 
+//     update the position
   double x=positionaf[0]+gps_pose.pose.position.x;
   double y=positionaf[1]+gps_pose.pose.position.y;
   double z=positionaf[2]+gps_pose.pose.position.z;
 
  if(z!=0)
  {
+//      maintain a llatitude of 2 m in z axis
    pose.pose.position.x = x;
    pose.pose.position.y = y;
    pose.pose.position.z= z+2;
@@ -120,7 +122,7 @@ int main(int argc, char **argv)
         rate.sleep();
     }
 
-
+// t is recommended to enter Offboard mode from Position mode, this way if the vehicle drops out of Offboard mode it will stop in its tracks and hover.
     pose.pose.position.x = 0;
     pose.pose.position.y = 0;
     pose.pose.position.z = 2;
