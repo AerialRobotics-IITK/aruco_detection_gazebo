@@ -5,31 +5,50 @@
  */
 
 #include <ros/ros.h>
+// local position and velocity from FCU
 #include <geometry_msgs/PoseStamped.h>
+// supports matrix and vector support
 #include <Eigen/Core>
+// changing arming status
 #include <mavros_msgs/CommandBool.h>
+// Set FCU operation mode
 #include <mavros_msgs/SetMode.h>
+// source of arming event
 #include <mavros_msgs/State.h>
+// including tf library
 #include <tf/tf.h>
+// supports transformations quaternions
 #include <Eigen/Geometry>
-#include <geometry_msgs/PoseStamped.h>
+// imu data orientation computed by FCU
 #include <sensor_msgs/Imu.h>
+// file input  output stream
 #include <iostream>
 
+// this provides scope for identifiers
 using namespace std;
 using namespace Eigen;
+
+// declaring variables
 geometry_msgs::PoseStamped pose;
-Matrix3f R;
 geometry_msgs::PoseStamped gps_pose;
 mavros_msgs::State current_state;
+// declaring a 3*3 matrix
+Matrix3f R;
+
+// getting the state into a pointer
 void state_cb(const mavros_msgs::State::ConstPtr& msg){
     current_state = *msg;
 }
+
+// vectors to store position before and after
 Vector3f positionbe;
 Vector3f positionaf;
+
+// storing gps data in pointer
 void gpsCallback(const geometry_msgs::PoseStamped::ConstPtr &msg){
     gps_pose=*msg;
 }
+
 
 void imuCallback(const sensor_msgs::Imu::ConstPtr &msg){
 
@@ -39,14 +58,19 @@ void imuCallback(const sensor_msgs::Imu::ConstPtr &msg){
   y=msg->orientation.y;
   z=msg->orientation.z;
   w=msg->orientation.w;
-  Quaternionf quat;
-  quat=Eigen::Quaternionf(x,y,z,w);
-  R=quat.toRotationMatrix();
+    
+//     making a quaternion of position
+    Quaternionf quat;
+    quat=Eigen::Quaternionf(x,y,z,w);
+  
+//     making rotation matrix from quaternion
+    R=quat.toRotationMatrix();
 }
 
 
 void posecallback(const geometry_msgs::PoseStamped::ConstPtr& msg)
 {
+//     converting the pose to ground frame
   positionbe[1]=-(msg->pose.position.x);
   positionbe[0]=-(msg->pose.position.y);
   positionbe[2]=-(msg->pose.position.z);
