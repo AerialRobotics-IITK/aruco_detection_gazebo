@@ -14,21 +14,30 @@ To run offboard example given on [px4 source](https://dev.px4.io/en/ros/mavros_o
 1. In a new terminal run `roscore` for starting master.
 
 2. In a new terminal open `~/catkin_ws/src` where our ros environment is installed
+
    Let's create a new package named `offboard` in that src and run it.
+
    *create a new package with dependencies using `catkin_create_pkg offboard std_msgs rospy roscpp`
+   
    *This creates a new CMakeLists.txt, src folder and package.xml
+   
    *Edit the CmakeLists.txt add this snippet at last
     `add_executable(offb_node src/offb_node.cpp)`
     `target_link_libraries(offb_node ${catkin_LIBRARIES})`
+   
    *Inside the src folder create offb_node.cpp and copy paste the code from [here](https://dev.px4.io/en/ros/mavros_offboard.html)
+   
    *type the command in our workspace `catkin_make` to build our catkin package. 
+   
    *`rosrun offboard offb_node` to run our offboard package.
 
 3.  In new terminal goto `~/src/Firmware`
+
     Launch the mavros by command `roslaunch mavros px4.launch fcu_url:="udp://:14540@127.0.0.1:14557"`
 
 4.  In a new terminal goto `~/src/Firmware`
-    Launch the gazebo simulator by command `make posix_sitl_default gazebo`
+      
+     Launch the gazebo simulator by command `make posix_sitl_default gazebo`
     
 Now the offboard example is enabled u can see the quad takeoff in the simulator.    
 
@@ -115,12 +124,11 @@ In other one `source Tools/setup_gazebo.bash $(pwd) $(pwd)/build/posix_sitl_defa
 
 `roslaunch gazebo_ros empty_world.launch world_name:=$(pwd)/Tools/sitl_gazebo/worlds/iris.world`
 
-
 `no_sim=1 make posix_sitl_default gazebo`
 
 ### Time to detect Aruco now
 
-The calibration data which we got during calibration the camera calibration in gazebo ; Now create a .yaml file and insert that data into it . Backup the head_camera.yaml file of the usb_camera (@ ~/.ros/camera_info) and replace the newly created file with the name head_camera.yaml.
+The calibration data which we got during calibrating the camera in gazebo ; Now create a .yaml file and insert that data into it . Backup the head_camera.yaml file of the usb_camera (@ ~/.ros/camera_info) and replace the newly created file with the name head_camera.yaml.
 
 goto `catkin_ws/src/aruco_ros/kinetic/devel/aruco_ros/launch/single.launch` and change line 13
 in it with this code. 
@@ -138,11 +146,10 @@ and save it.
  `roslaunch usb_cam usb_cam-test.launch`
  
  `rosrun image_proc image_proc image_raw:=/iris/camera_red_iris/image_raw camera_info:=/usb_cam/camera_info`
- 
 
-`roslaunch aruco_ros single.launch markerId:=7 markerSize:=0.5`
+ `roslaunch aruco_ros single.launch markerId:=7 markerSize:=0.5`
 
-`rosrun rqt_image_view rqt_image_view` and select stream .. /aruco.single/result
+ `rosrun rqt_image_view rqt_image_view` and select stream .. /aruco.single/result
 
 Now you can get the pose data from the topic aruco.single/pose
 
@@ -155,5 +162,3 @@ Now catkin_make and source it
 follow the [aruco detection in gazebo](https://github.com/AerialRobotics-IITK/gazebo_simulation/blob/master/README.md#aruco-detection-in-gazebo) again .
 
 now modify the iris.world and change the size of aruco in the models
-
-
