@@ -56,23 +56,23 @@ This tutorial assumes your have cloned Firmware folder in ~/src/Firmware and hav
    Add these lines
 
    <xacro:camera_macro
-    namespace="${namespace}"
-    parent_link="base_link"
-    camera_suffix="red_iris"
-    frame_rate="30.0"
-    horizontal_fov="1.3962634"
-    image_width="800"
-    image_height="800"
-    image_format="R8G8B8"
-    min_distance="0.02"
-    max_distance="300"
-    noise_mean="0.0"
-    noise_stddev="0.007"
-    enable_visual="1"
-    >
-    <box size="0.05 0.05 0.05" />
-    <origin xyz="0 0 -0.07" rpy="0 1.57079 0"/>
-    </xacro:camera_macro>
+        namespace="${namespace}"
+        parent_link="base_link"
+        camera_suffix="red_iris"
+        frame_rate="30.0"
+        horizontal_fov="1.3962634"
+        image_width="800"
+        image_height="800"
+        image_format="R8G8B8"
+        min_distance="0.02"
+        max_distance="300"
+        noise_mean="0.0"
+        noise_stddev="0.007"
+        enable_visual="1"
+        >
+        <box size="0.05 0.05 0.05" />
+        <origin xyz="0 0 -0.07" rpy="0 1.57079 0"/>
+        </xacro:camera_macro> 
     
     save it .
     
