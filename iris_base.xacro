@@ -14,6 +14,7 @@
   <xacro:arg name='qgc_udp_port' default='14550' />
   <xacro:arg name='hil_mode' default='false' />
   <xacro:arg name='hil_state_level' default='false' />
+  <xacro:arg name='send_odometry' default='false' />
   <xacro:arg name='vehicle_is_tailsitter' default='false' />
   <xacro:arg name='visual_material' default='DarkGrey' />
   <xacro:arg name='enable_mavlink_interface' default='true' />
@@ -66,6 +67,7 @@
     hil_mode="$(arg hil_mode)"
     hil_state_level="$(arg hil_state_level)"
     vehicle_is_tailsitter="$(arg vehicle_is_tailsitter)"
+    send_odometry="$(arg send_odometry)"
     >
   </xacro:mavlink_interface_macro>
   </xacro:if>
@@ -89,7 +91,7 @@
         >
         <box size="0.05 0.05 0.05" />
         <origin xyz="0 0 -0.07" rpy="0 1.57079 0"/>
-        </xacro:camera_macro>
+        </xacro:camera_macro> 
 
   <!-- Mount an ADIS16448 IMU. -->
   <xacro:imu_plugin_macro
