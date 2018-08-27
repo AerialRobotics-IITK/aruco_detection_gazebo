@@ -54,7 +54,7 @@ This tutorial assumes your have cloned Firmware folder in ~/src/Firmware and hav
 1. Search in iris_base.xacro and add the following code just above it and save it.
 
    Add these lines
-<code>
+   
    <xacro:camera_macro
         namespace="${namespace}"
         parent_link="base_link"
@@ -73,8 +73,7 @@ This tutorial assumes your have cloned Firmware folder in ~/src/Firmware and hav
         <box size="0.05 0.05 0.05" />
         <origin xyz="0 0 -0.07" rpy="0 1.57079 0"/>
         </xacro:camera_macro> 
-    </code>
-    save it .
+   save it .
     
  * To Run the gazebo simulation follow these
      1. Go to ~src/Firmware    
